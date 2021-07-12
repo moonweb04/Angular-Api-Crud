@@ -1,0 +1,31 @@
+<div class="continer">
+    <div class="row justify-content-center">
+        <div class="col-8">
+            <div class="card bg-dark text-light">
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Title</th>
+                                <th>Body</th>
+                                <th colspan="2">Operations</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let d of apiData">
+                                <td>{{d.id}}</td>
+                                <td>{{d.title}}</td>
+                                <td>{{d.body}}</td>
+                                <td><a routerLink="/update/{{d.id}}"><i (click)="updateFun()"
+                                            class="fa fa-edit"></i></a></td>
+                                <td><a routerLink="/listing"><i (click)="deleteFun(d.id)" class="fa fa-trash"
+                                            style="color:red"></i></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
